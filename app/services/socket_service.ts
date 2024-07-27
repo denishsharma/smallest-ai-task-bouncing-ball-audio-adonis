@@ -20,10 +20,10 @@ export default class SocketService {
 
   private onConnection() {
     this.io.on('connection', (socket) => {
-      logger.info('socket connected', socket.id)
+      logger.info('socket connected with id: %s', socket.id)
 
       socket.on('disconnect', () => {
-        logger.info('socket disconnected', socket.id)
+        logger.info('socket connection closed with id: %s', socket.id)
       })
     })
   }
