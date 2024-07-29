@@ -26,7 +26,7 @@ export default class SocketService {
 
     this.io.engine.on('initial_headers', (headers, req) => {
       const reqCookies = parse(req.headers.cookie || '')
-      const sessionCookie = serialize('session', reqCookies.session || ulid(), { sameSite: 'lax', httpOnly: true, secure: app.inProduction, path: '/' })
+      const sessionCookie = serialize('session', reqCookies.session || ulid(), { sameSite: 'none', httpOnly: true, secure: app.inProduction, path: '/' })
       headers['Set-Cookie'] = sessionCookie
     })
 
