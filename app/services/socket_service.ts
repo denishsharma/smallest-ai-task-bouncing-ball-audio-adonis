@@ -19,7 +19,7 @@ export default class SocketService {
 
     this.io = new Server(server.getNodeServer(), {
       cors: {
-        origin: true,
+        origin: 'https://smallest-ai-task-bouncing-ball-audio-nuxt.vercel.app',
         credentials: true,
       },
     })
