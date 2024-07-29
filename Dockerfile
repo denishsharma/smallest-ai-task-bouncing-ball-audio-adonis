@@ -13,7 +13,7 @@ RUN pnpm install --frozen-lockfile
 FROM base as production-deps
 WORKDIR /app
 ADD package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile --prod
+RUN pnpm install --frozen-lockfile --prod --ignore-scripts
 
 # Build stage
 FROM base as build
