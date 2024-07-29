@@ -30,6 +30,12 @@ export default class SocketService {
       headers['Set-Cookie'] = sessionCookie
     })
 
+    this.io.engine.on('headers', (headers, req) => {
+      const reqCookies = parse(req.headers.cookie || '')
+      const sessionCookie = serialize('session', reqCookies.session || ulid(), { sameSite: 'none', httpOnly: true, secure: app.inProduction, path: '/' })
+      headers['Set-Cookie'] = sessionCookie
+    })
+
     this.io.use(this.authenticate)
 
     this.onConnection()
@@ -52,9 +58,12 @@ export default class SocketService {
   }
 
   private authenticate(socket: Socket, next: (err?: Error | undefined) => void) {
-    const cookies = parse(socket.handshake.headers.cookie || '')
+    const cookies = parse(socket.request.headers.cookie || '')
     if (!cookies.session) {
-      return next(new Error('No session cookie found'))
+      const sessionCookie = serialize('session', ulid(), { sameSite: 'none', httpOnly: true, secure: app.inProduction, path: '/' })
+      socket.request.headers.cookie = sessionCookie
+      socket.session = { id: cookies.session }
+      return next()
     }
 
     socket.session = { id: cookies.session }
