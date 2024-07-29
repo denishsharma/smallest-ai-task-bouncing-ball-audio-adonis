@@ -33,6 +33,7 @@ export default defineConfig({
     () => import('#providers/socket_provider'),
     () => import('@adonisjs/session/session_provider'),
     () => import('@adonisjs/cache/cache_provider'),
+    () => import('#providers/audio_processor_manager_provider'),
   ],
 
   /*
@@ -47,6 +48,7 @@ export default defineConfig({
     () => import('#start/routes'),
     () => import('#start/kernel'),
     () => import('#start/socket'),
+    () => import('#start/events'),
   ],
 
   /*

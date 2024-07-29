@@ -4,7 +4,6 @@ const cacheConfig = defineConfig({
   default: 'memory',
   stores: {
     memory: store().useL1Layer(drivers.memory({
-      maxSize: 10000,
       maxItems: 5000,
     })),
   },
