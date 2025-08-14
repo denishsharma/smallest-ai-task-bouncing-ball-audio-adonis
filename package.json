@@ -1,9 +1,9 @@
 {
-  "name": "smallest-ai-task-bouncing-ball-audio-adonis",
+  "name": "bouncing-ball-audio-adonis",
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "description": "Smallest AI Task - Bouncing Ball Audio Adonis Server",
+  "description": "Bouncing Ball Audio Adonis Server",
   "author": {
     "name": "Denish Sharma",
     "email": "denishcommon@gmail.com"
@@ -11,10 +11,10 @@
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/denishsharma/smallest-ai-task-bouncing-ball-audio-adonis.git"
+    "url": "git+https://github.com/denishsharma/bouncing-ball-audio-adonis.git"
   },
   "bugs": {
-    "url": "https://github.com/denishsharma/smallest-ai-task-bouncing-ball-audio-adonis/issues"
+    "url": "https://github.com/denishsharma/bouncing-ball-audio-adonis/issues"
   },
   "keywords": [
     "server",
