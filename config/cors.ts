@@ -8,7 +8,7 @@ import { defineConfig } from '@adonisjs/cors'
  */
 const corsConfig = defineConfig({
   enabled: true,
-  origin: ['https://smallest-ai-task-bouncing-ball-audio-nuxt.vercel.app'],
+  origin: ['https://smallest-ai-task-bouncing-ball-audio-nuxt.vercel.app', 'https://bouncing-ball-audio.vercel.app/'],
   methods: ['GET', 'HEAD', 'POST', 'PUT', 'DELETE'],
   headers: true,
   exposeHeaders: [],
